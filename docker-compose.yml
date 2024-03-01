@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  server-house-api:
+    build: ./
+    ports:
+      - '49201:80'
+
+networks:
+  default:
+    external:
+      name: nginxproxymanager_default
