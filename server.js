@@ -3,13 +3,13 @@ const connectMongoDB = require( "./db/house_db" );
 const House = require( './models/House' );
 const app = express();
 const cors = require( "cors" );
-const port = 8080;
+const port = 5000;
 
 // Init DB Connection And Data
 connectMongoDB();
 
 var corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://client-houseapi.pstoregr.dev',
     optionsSuccessStatus: 200
 };
 

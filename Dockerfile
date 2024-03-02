@@ -1,17 +1,16 @@
 FROM node:20.11.1-alpine
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Install dependencies
-COPY package.json ./
-RUN npm i
+COPY package*.json ./
 
-USER node
+RUN npm ci
 
-EXPOSE 3000
+COPY . .
 
-ENV PORT 3000
-# set hostname to localhost
-ENV HOSTNAME "0.0.0.0"
+EXPOSE 5000
 
-CMD ["npm", "start"]
+ENV PORT 5000
+
+CMD ["npm", "run", "dev"]

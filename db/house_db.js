@@ -28,7 +28,7 @@ function deepEqual ( obj1, obj2 ) {
 
 const connectMongoDB = async () => {
     try {
-        await mongoose.connect( 'mongodb://localhost:27017/house_db', { useNewUrlParser: true, useUnifiedTopology: true } );
+        await mongoose.connect( 'mongodb://server-house-api-mongo:27017/house_db', {} );
         console.log( 'Connected to MongoDB.' );
 
         // Fetch data from the external API
